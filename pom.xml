@@ -11,6 +11,15 @@
     <maven.compiler.target>17</maven.compiler.target>
   </properties>
 
+  <dependencies>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>5.10.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
   <build>
     <plugins>
       <plugin>
@@ -40,6 +49,7 @@
             <failOnViolation>true</failOnViolation>
             <!-- printFailingErrors is pretty useful -->
             <printFailingErrors>true</printFailingErrors>
+            <linkXRef>false</linkXRef>
             <rulesets>
               <ruleset>pmd_rules.xml</ruleset>
             </rulesets>
@@ -53,6 +63,11 @@
             </goals>
           </execution>
         </executions>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.2.2</version>
       </plugin>
     </plugins>
   </build>
