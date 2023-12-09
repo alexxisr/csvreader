@@ -70,9 +70,9 @@ public final class CSVParser implements Iterable<CSVRecord> {
 
     /**
      * Read from reader.
-     * @param reader the InputStreamReader to read csv from.
+     * @param reader the Reader to read csv from.
      */
-    public CSVParser(final InputStreamReader reader) {
+    public CSVParser(final Reader reader) {
         this (new BufferedReader(reader, BUFFER_SIZE));
     }
 
